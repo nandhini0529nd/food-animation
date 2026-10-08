@@ -1,0 +1,191 @@
+.foods {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+
+.food {
+  width: 200px;
+  margin: 30px auto;
+  padding: 20px;
+  text-align: center;
+  background-color: lightpink;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: foodAppear 0.8s ease, floatFood 2s ease-in-out infinite;
+}
+@keyframes floatFood {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.food:hover {
+  box-shadow: 0 8px 20px gray;
+  transform: translateY(-10px) scale(1.05);
+}
+
+.food button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.food button:hover {
+  transform: scale(1.1);
+  background-color:brown;
+  color: white;
+}
+@keyframes foodAppear {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.food:nth-child(2) {
+  background-color: lightblue;
+}
+
+.food:nth-child(3) {
+  background-color: lightyellow;
+}
+.food button:disabled {
+  background-color: lightgray;
+  color: gray;
+  cursor: not-allowed;
+  transform: none;
+}
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  animation: headingAnimation 1s ease;
+}
+
+@keyframes headingAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+p {
+  text-align: center;
+  animation: subtitleAnimation 1s ease;
+}
+
+@keyframes subtitleAnimation {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+body {
+  margin: 0;
+  background-color: #fff5f7;
+  font-family: Arial, sans-serif;
+}
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  color: blue;
+  animation: headingAnimation 1s ease;
+}
+p {
+  text-align: center;
+  color:purple;
+}
+.reset-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: lightcoral;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reset-button:hover {
+  transform: scale(1.1);
+  background-color:  crimson;
+}
+.food h2 {
+  font-size: 25px;
+  animation: emojiAnimation 1.5s ease-in-out infinite;
+
+}
+
+@keyframes emojiAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(10deg) scale(1.1);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.food p:last-child {
+  animation: successAnimation 0.5s ease;
+}
+
+@keyframes successAnimation {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.foods > h2 {
+  width: 100%;
+  text-align: center;
+  color: #d6336c;
+  margin-top: 20px;
+}
+@media (max-width: 600px) {
+  .foods {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .food {
+    width: 250px;
+  }
+}
