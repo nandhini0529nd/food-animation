@@ -21,6 +21,15 @@ function Food() {
         <button onClick={()=> {
         setPizzaOrdered(true);
             setOrder("🍕 Pizza");
+            fetch("http://localhost:5000/user", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    food: "Pizza"
+  })
+});
         }}
              disabled={pizzaordered}
              >
@@ -36,6 +45,15 @@ function Food() {
         <button onClick={()=> {
             setBurgerOrdered(true);
             setOrder("🍔 Burger");
+            fetch("http://localhost:5000/user", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    food: "Burger"
+  })
+});
         }}
             disabled={burgerordered}
             >
@@ -51,6 +69,15 @@ function Food() {
         <button onClick={()=>{
             setIceCreamOrdered(true);
             setOrder("🍦 Ice Cream");
+            fetch("http://localhost:5000/user", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    food: "Ice Cream"
+  })
+});
         }}
             disabled={iceCreamordered}
             >
